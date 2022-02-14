@@ -20,6 +20,7 @@ namespace ASP220211V3.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        DbSet<ElofizetesTipus> ElofizetesTipus { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
