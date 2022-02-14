@@ -3,10 +3,22 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.ElofizetesTipusok",
+                c => new
+                    {
+                        EloofizetesTipusId = c.Int(nullable: false),
+                        Nev = c.String(nullable: false, maxLength: 10, unicode: false),
+                        Ar = c.Int(nullable: false),
+                        HonapokSzama = c.Int(nullable: false),
+                        TermekKedvezmeny = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.EloofizetesTipusId);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -29,6 +41,21 @@
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Ugyfelek",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Nev = c.String(nullable: false, maxLength: 60, unicode: false),
+                        Szul = c.DateTime(nullable: false, storeType: "date"),
+                        HirleveletKap = c.Boolean(nullable: false),
+                        ElofizetesKezdete = c.DateTime(storeType: "date"),
+                        ElofizetesTipusId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ElofizetesTipusok", t => t.ElofizetesTipusId, cascadeDelete: true)
+                .Index(t => t.ElofizetesTipusId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -82,18 +109,22 @@
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Ugyfelek", "ElofizetesTipusId", "dbo.ElofizetesTipusok");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.Ugyfelek", new[] { "ElofizetesTipusId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Ugyfelek");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.ElofizetesTipusok");
         }
     }
 }

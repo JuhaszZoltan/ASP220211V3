@@ -10,7 +10,7 @@ namespace ASP220211V3.Models
     [Table("ElofizetesTipusok")]
     public class ElofizetesTipus
     {
-        [Required, Key]
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int EloofizetesTipusId { get; set; }
         [Required, StringLength(10), Column(TypeName = "VARCHAR")]
         public string Nev { get; set; }

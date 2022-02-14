@@ -7,13 +7,13 @@ namespace ASP220211V3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddUgyfelekAndElofizetes : IMigrationMetadata
+    public sealed partial class seed_ugyfelek : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUgyfelekAndElofizetes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(seed_ugyfelek));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202141328215_AddUgyfelekAndElofizetes"; }
+            get { return "202202141511029_seed_ugyfelek"; }
         }
         
         string IMigrationMetadata.Source

@@ -21,6 +21,9 @@ namespace ASP220211V3.Models
         public bool HirleveletKap { get; set; }
         [Column(TypeName = "DATE")]
         public DateTime? ElofizetesKezdete { get; set; } = null;
+        [ForeignKey("ElofizetesTipus")]
+        public int ElofizetesTipusId { get; set; }
         public ElofizetesTipus ElofizetesTipus { get; set; }
+
     }
 }

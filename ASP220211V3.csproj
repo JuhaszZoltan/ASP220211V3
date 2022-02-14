@@ -177,17 +177,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202111307079_InitialCreate.cs" />
-    <Compile Include="Migrations\202202111307079_InitialCreate.designer.cs">
-      <DependentUpon>202202111307079_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202202141508227_init.cs" />
+    <Compile Include="Migrations\202202141508227_init.designer.cs">
+      <DependentUpon>202202141508227_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202141328215_AddUgyfelekAndElofizetes.cs" />
-    <Compile Include="Migrations\202202141328215_AddUgyfelekAndElofizetes.designer.cs">
-      <DependentUpon>202202141328215_AddUgyfelekAndElofizetes.cs</DependentUpon>
+    <Compile Include="Migrations\202202141509464_seed_elofizetes_tipusok.cs" />
+    <Compile Include="Migrations\202202141509464_seed_elofizetes_tipusok.designer.cs">
+      <DependentUpon>202202141509464_seed_elofizetes_tipusok.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202141329173_SeedUgyfelekAndElofizetes.cs" />
-    <Compile Include="Migrations\202202141329173_SeedUgyfelekAndElofizetes.designer.cs">
-      <DependentUpon>202202141329173_SeedUgyfelekAndElofizetes.cs</DependentUpon>
+    <Compile Include="Migrations\202202141511029_seed_ugyfelek.cs" />
+    <Compile Include="Migrations\202202141511029_seed_ugyfelek.designer.cs">
+      <DependentUpon>202202141511029_seed_ugyfelek.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,22 +298,21 @@
     <Content Include="Views\Ugyfel\Reszletek.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202111307079_InitialCreate.resx">
-      <DependentUpon>202202111307079_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202141328215_AddUgyfelekAndElofizetes.resx">
-      <DependentUpon>202202141328215_AddUgyfelekAndElofizetes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202141329173_SeedUgyfelekAndElofizetes.resx">
-      <DependentUpon>202202141329173_SeedUgyfelekAndElofizetes.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202141508227_init.resx">
+      <DependentUpon>202202141508227_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202141509464_seed_elofizetes_tipusok.resx">
+      <DependentUpon>202202141509464_seed_elofizetes_tipusok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202141511029_seed_ugyfelek.resx">
+      <DependentUpon>202202141511029_seed_ugyfelek.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
