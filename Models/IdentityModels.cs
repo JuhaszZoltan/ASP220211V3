@@ -20,7 +20,8 @@ namespace ASP220211V3.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        DbSet<ElofizetesTipus> ElofizetesTipus { get; set; }
+        public DbSet<ElofizetesTipus> ElofizetesTipusok { get; set; }
+        public DbSet<Ugyfel> Ugyfelek { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

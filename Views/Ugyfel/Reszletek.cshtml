@@ -1,0 +1,10 @@
+﻿@model ASP220211V3.Models.Ugyfel
+
+<h2>@Model.Nev adatai:</h2>
+<ul>
+    <li><strong>Név:</strong> @Model.Nev</li>
+    <li><strong>Született:</strong> @Model.Szul.ToString("yyyy. MMMM dd.")</li>
+    @{string hirlevek = Model.HirleveletKap ? "IGEN" : "NEM";}
+    <li><strong>Hírlevél: </strong> @hirlevek</li>
+</ul>
+

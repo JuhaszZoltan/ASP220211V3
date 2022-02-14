@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ASP220211V3.Models.Ugyfel>
+
+<h2>Ugyfelek listája:</h2>
+
+<ul>
+    @foreach (var ugyfel in Model)
+    {
+        <li>@ugyfel.Nev</li>
+    }
+</ul>
+
+
